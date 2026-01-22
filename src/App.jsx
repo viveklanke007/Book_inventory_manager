@@ -1,11 +1,23 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import AddBook from './pages/AddBook';
+import EditBook from './pages/EditBook';
+import BookDetails from './pages/BookDetails';
+
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-blue-600">
-        Book Inventory Management System
-      </h1>
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="add" element={<AddBook />} />
+          <Route path="edit/:id" element={<EditBook />} />
+          <Route path="book/:id" element={<BookDetails />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
