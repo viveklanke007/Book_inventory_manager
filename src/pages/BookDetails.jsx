@@ -6,83 +6,79 @@ function BookDetails() {
   const { id } = useParams();
   const [book, setBook] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchBook = async () => {
       try {
         const data = await getBookById(id);
         setBook(data);
-        setLoading(false);
       } catch (err) {
-        setError('Failed to fetch book details.');
+        console.error('Error fetching details:', err);
+      } finally {
         setLoading(false);
       }
     };
     fetchBook();
   }, [id]);
 
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
+  if (loading) return (
+    <div className="flex items-center justify-center min-h-[60vh]">
+       <div className="w-12 h-12 border-4 border-slate-200 border-t-indigo-600 rounded-full animate-spin"></div>
+    </div>
+  );
 
-  if (error) {
-    return (
-      <div className="bg-red-50 p-4 rounded-md text-red-700">
-        {error} <Link to="/" className="text-blue-600 underline ml-2">Back to Home</Link>
-      </div>
-    );
-  }
+  if (!book) return (
+    <div className="max-w-xl mx-auto py-32 px-6 text-center">
+      <h2 className="text-2xl font-black text-slate-800 tracking-tight">Book Not Found</h2>
+      <Link to="/" className="text-indigo-600 hover:underline mt-6 inline-block font-bold uppercase text-sm tracking-widest">Back to Library</Link>
+    </div>
+  );
 
   return (
-    <div className="max-w-4xl mx-auto py-6">
-      <div className="mb-6">
-        <Link to="/" className="text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors">
-          &larr; Back to Inventory
-        </Link>
-      </div>
-
-      <div className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-lg">
-        <div className="px-6 py-8 bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-100">
-          <h3 className="text-3xl font-extrabold text-gray-900 mb-2">
-            {book.title}
-          </h3>
-          <p className="text-lg text-blue-600 font-medium italic">
-            by {book.author}
-          </p>
+    <div className="max-w-5xl mx-auto px-4 py-12 page-enter space-y-10">
+      <header className="flex flex-col md:flex-row md:items-end justify-between gap-8 pb-10 border-b-4 border-slate-200">
+        <div className="space-y-4">
+          <Link to="/" className="text-xs font-black text-slate-400 uppercase tracking-widest hover:text-indigo-600 transition-colors">
+            &larr; Back to Inventory
+          </Link>
+          <h1 className="text-5xl font-black text-slate-900 leading-tight tracking-tighter">{book.title}</h1>
+          <p className="text-2xl text-indigo-600 font-bold italic">— {book.author}</p>
         </div>
-        
-        <div className="px-6 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-            <div className="space-y-1">
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Publisher</span>
-              <p className="text-gray-900 font-semibold text-lg">{book.publisher}</p>
-            </div>
-            <div className="space-y-1">
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Published Date</span>
-              <p className="text-gray-900 font-semibold text-lg">{book.publishedDate}</p>
-            </div>
-          </div>
+        <Link
+          to={`/edit/${book.id}`}
+          className="bg-indigo-600 text-white px-10 py-5 rounded-xl font-bold text-sm tracking-widest uppercase hover:bg-indigo-700 shadow-xl shadow-indigo-600/20 transition-all text-center"
+        >
+          Modify Record
+        </Link>
+      </header>
 
-          <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-            <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Book Overview</h4>
-            <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">
-              {book.overview || "No overview available for this book."}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div className="lg:col-span-2 space-y-10">
+          <div className="card-premium p-10 space-y-6">
+            <h3 className="text-sm font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-4">Book Description</h3>
+            <p className="text-xl text-slate-600 leading-relaxed italic font-serif">
+              {book.overview || "No description provided for this book."}
             </p>
           </div>
         </div>
 
-        <div className="px-6 py-6 bg-gray-50 border-t border-gray-100 flex justify-end items-center space-x-4">
-           <Link
-            to={`/edit/${book.id}`}
-            className="inline-flex justify-center py-2.5 px-8 border border-transparent shadow-sm text-sm font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 transform hover:-translate-y-0.5"
-          >
-            Edit Details
-          </Link>
+        <div className="lg:col-span-1 space-y-10">
+          <div className="card-premium p-8 bg-indigo-600 text-white shadow-2xl shadow-indigo-600/30 border-none">
+            <h3 className="text-xs font-black text-white/60 uppercase tracking-wider mb-8">Asset Information</h3>
+            <div className="space-y-8">
+              <div>
+                <span className="text-[10px] text-white/40 font-black uppercase tracking-widest block mb-1">Publisher</span>
+                <p className="text-xl font-black italic underline underline-offset-4 decoration-white/20">{book.publisher}</p>
+              </div>
+              <div>
+                <span className="text-[10px] text-white/40 font-black uppercase tracking-widest block mb-1">Date Published</span>
+                <p className="text-3xl font-black italic leading-none">{book.publishedDate}</p>
+              </div>
+              <div className="pt-8 border-t border-white/10 text-[10px] font-black uppercase tracking-widest text-white/60">
+                Database Entry ID: {book.id}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
