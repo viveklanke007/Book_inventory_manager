@@ -23,6 +23,7 @@ This project utilizes **MockAPI** as a secure, cloud-based dummy backend to hand
 - **Data Persistence**: Storing and retrieving book entries reliably.
 - **CRUD Operations**: Supporting all Create, Read, Update, and Delete actions through standardized REST API calls.
 - **Dynamic Syncing**: Ensuring the UI always reflects the latest state of the database.
+- **API Route** : https://69722c3332c6bacb12c60916.mockapi.io/api/books/
 
 ## 📂 Project Structure
 
