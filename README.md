@@ -1,105 +1,67 @@
 <div align="center">
 
-<img src="public/wave-banner.gif" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=gradient&text=BookSync&fontSize=70&animation=fadeIn&fontAlignY=38&desc=Modern%20Book%20Inventory%20Manager&descAlignY=60" width="100%" />
 
 # 📚 BookSync
 
-### ✨ Smart Library Management • Fast Inventory Tracking • Beautiful UI
+### Smart • Fast • Modern • Book Inventory Manager
 
 <p align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=28&duration=2500&pause=1000&color=36BCF7&center=true&vCenter=true&width=800&lines=Manage+Books+Like+a+Pro;Track+Inventory+in+Real-Time;Modern+UI+with+Smooth+Animations;Built+with+React+%2B+TailwindCSS" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=600&size=28&duration=2500&pause=1000&color=00C2FF&center=true&vCenter=true&width=900&lines=Manage+Books+Effortlessly;Track+Inventory+in+Real-Time;Fast+CRUD+Operations;Modern+Responsive+UI" />
 
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/viveklanke007/Book_inventory_manager?style=for-the-badge" />
-  <img src="https://img.shields.io/github/forks/viveklanke007/Book_inventory_manager?style=for-the-badge" />
-  <img src="https://img.shields.io/github/issues/viveklanke007/Book_inventory_manager?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react"/>
+  <img src="https://img.shields.io/badge/TailwindCSS-Styled-38B2AC?style=for-the-badge&logo=tailwind-css"/>
+  <img src="https://img.shields.io/badge/MockAPI-Backend-orange?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Mobile-Friendly-success?style=for-the-badge"/>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/React-Powered-61DAFB?style=for-the-badge&logo=react" />
-  <img src="https://img.shields.io/badge/TailwindCSS-Styled-38B2AC?style=for-the-badge&logo=tailwind-css" />
-  <img src="https://img.shields.io/badge/MockAPI-Database-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Mobile-Friendly-success?style=for-the-badge" />
+  <img src="https://img.shields.io/github/stars/viveklanke007/Book_inventory_manager?style=for-the-badge"/>
+  <img src="https://img.shields.io/github/forks/viveklanke007/Book_inventory_manager?style=for-the-badge"/>
+  <img src="https://img.shields.io/github/issues/viveklanke007/Book_inventory_manager?style=for-the-badge"/>
 </p>
-
-### 🚀 The Ultimate Book Inventory Experience
-
-<img src="public/banner.gif" width="100%" />
-
----
-
-</div>
-
-# 🌟 Overview
-
-BookSync is a **modern digital book inventory platform** designed for seamless book management.
-
-It gives users complete control over their library system.
-
-✨ Add Books  
-✨ Edit Books  
-✨ Delete Books  
-✨ Track Details  
-✨ View Full Descriptions  
-✨ Manage Publishers  
-
----
-
-<div align="center">
-
-## ⚡ Live Experience
-
-<img src="public/live-preview.gif" width="100%" />
 
 </div>
 
 ---
 
-# 🎯 Core Features
+# ✨ About BookSync
+
+BookSync is a modern **Book Inventory Management System** built for managing book collections digitally.
+
+It provides:
+
+📚 Inventory tracking  
+➕ Add new books  
+✏ Edit records  
+❌ Delete entries  
+📖 Detailed book information  
+⚡ Real-time syncing  
+
+A simple and powerful system with clean UI and fast performance.
+
+---
+
+# 🌟 Features
 
 <div align="center">
 
-| 🚀 Feature | 🎯 Description |
+| 🚀 Feature | 📌 Description |
 |------------|----------------|
-| 📚 Inventory Dashboard | View all books in a clean table |
-| ➕ Add New Books | Register books instantly |
-| ✏ Update Records | Edit existing data |
-| ❌ Remove Books | Delete unwanted books |
-| 🔍 Book Details | Full detailed information |
-| 🌐 API Sync | Real-time backend synchronization |
-| 📱 Responsive UI | Works on every screen |
-| ✨ Animations | Smooth transitions & effects |
+| 📚 Inventory Dashboard | View all books in one place |
+| ➕ Add Books | Create new records |
+| ✏ Edit Records | Update book data |
+| ❌ Delete Books | Remove unwanted books |
+| 📖 Book Details | Full description & publisher info |
+| 🌐 API Sync | Real-time data updates |
+| 📱 Responsive Design | Mobile + Desktop optimized |
+| ✨ Smooth UI | Modern transitions & animations |
 
 </div>
-
----
-
-# 🎬 Animated Preview
-
-## 📊 Dashboard Experience
-
-<img src="public/dashboard.gif" width="100%" />
-
----
-
-## ➕ Add Book Animation
-
-<img src="public/add-book.gif" width="100%" />
-
----
-
-## ✏ Edit Book Flow
-
-<img src="public/edit-book.gif" width="100%" />
-
----
-
-## 📖 Detailed View Animation
-
-<img src="public/book-details.gif" width="100%" />
 
 ---
 
@@ -108,28 +70,28 @@ It gives users complete control over their library system.
 ```mermaid
 graph TD;
     A[React Frontend] --> B[React Router]
-    A --> C[Tailwind Components]
-    A --> D[Axios API Layer]
+    A --> C[Tailwind CSS]
+    A --> D[Axios API]
     D --> E[MockAPI Backend]
-    E --> F[Cloud Database]
+    E --> F[Book Database]
 ```
 
 ---
 
-# ⚡ Workflow
+# ⚡ Application Flow
 
 ```mermaid
 flowchart LR
-    A[User Opens App] --> B[View Books]
-    B --> C[Add/Edit/Delete]
-    C --> D[Send API Request]
+    A[User Action] --> B[React UI]
+    B --> C[Axios Request]
+    C --> D[MockAPI]
     D --> E[Database Updated]
     E --> F[UI Sync]
 ```
 
 ---
 
-# 📊 Data Flow
+# 📊 CRUD Workflow
 
 ```mermaid
 sequenceDiagram
@@ -138,12 +100,11 @@ sequenceDiagram
     participant API
     participant Database
 
-    User->>Frontend: Action
-    Frontend->>API: Request
-    API->>Database: CRUD Operation
-    Database-->>API: Updated Data
-    API-->>Frontend: Response
-    Frontend-->>User: Updated UI
+    User->>Frontend: Create/Update/Delete
+    Frontend->>API: Send Request
+    API->>Database: Update Data
+    Database-->>API: Return Response
+    API-->>Frontend: Updated Data
 ```
 
 ---
@@ -152,11 +113,13 @@ sequenceDiagram
 
 <div align="center">
 
-| Frontend | Backend | Styling |
-|----------|---------|---------|
-| React | MockAPI | Tailwind CSS |
-| Axios | REST API | Responsive Design |
-| React Router | Cloud Storage | Animations |
+| Technology | Purpose |
+|------------|---------|
+| React | Frontend UI |
+| Tailwind CSS | Styling |
+| React Router | Navigation |
+| Axios | API Communication |
+| MockAPI | Backend |
 
 </div>
 
@@ -169,34 +132,28 @@ BookSync/
 │── src/
 │   ├── components/
 │   ├── pages/
-│   ├── routes/
 │   ├── services/
+│   ├── routes/
 │   ├── App.jsx
 │   └── main.jsx
 │
 │── public/
-│   ├── banner.gif
-│   ├── dashboard.gif
-│   ├── add-book.gif
-│   ├── edit-book.gif
-│   ├── book-details.gif
-│
 │── package.json
 │── README.md
 ```
 
 ---
 
-# 📌 Pages
+# 📌 Application Pages
 
 <div align="center">
 
 | Page | Description |
 |------|-------------|
-| 📊 Dashboard | Main inventory screen |
-| ➕ Add Book | Create new entries |
-| ✏ Edit Book | Modify book records |
-| 📖 Book Details | Full information page |
+| 📊 Dashboard | Main inventory page |
+| ➕ Add Book | Add new book entries |
+| ✏ Edit Book | Modify existing data |
+| 📖 Book Details | View complete details |
 
 </div>
 
@@ -212,7 +169,7 @@ git clone https://github.com/viveklanke007/Book_inventory_manager.git
 
 ---
 
-## Enter Project Folder
+## Navigate to Project
 
 ```bash
 cd Book_inventory_manager
@@ -252,7 +209,7 @@ https://69722c3332c6bacb12c60916.mockapi.io/api/books/
 
 ---
 
-# 🔄 CRUD Routes
+# 🔄 CRUD API Routes
 
 ```bash
 GET /books
@@ -261,30 +218,40 @@ PUT /books/:id
 DELETE /books/:id
 ```
 
+---
+
+# 📈 Project Stats
+
+```mermaid
+pie
+    title BookSync Features
+    "Inventory Management" : 35
+    "CRUD Operations" : 30
+    "Responsive Design" : 20
+    "UI Experience" : 15
+```
+
+---
 
 # 🔥 Why BookSync?
 
-<div align="center">
-
-⚡ Fast Performance  
-🎨 Beautiful UI  
-📱 Mobile Responsive  
-🔄 Real-time Sync  
-🧩 Modular Code  
-🚀 Easy Deployment  
-📚 Perfect for Library Management  
-
-</div>
+✅ Clean UI  
+✅ Easy CRUD Operations  
+✅ Responsive Design  
+✅ API Integration  
+✅ Fast Performance  
+✅ Simple Architecture  
+✅ Easy Maintenance  
 
 ---
 
 # 🤝 Contribution Guide
 
 ```bash
-Fork → Clone → Create Branch → Code → Commit → Push → PR
+Fork → Clone → Create Branch → Code → Commit → Push → Pull Request
 ```
 
-## Create Branch
+## Create Feature Branch
 
 ```bash
 git checkout -b feature-name
@@ -293,10 +260,10 @@ git checkout -b feature-name
 ## Commit Changes
 
 ```bash
-git commit -m "Added new feature"
+git commit -m "Added feature"
 ```
 
-## Push Branch
+## Push Changes
 
 ```bash
 git push origin feature-name
@@ -306,16 +273,10 @@ git push origin feature-name
 
 # 👨‍💻 Author
 
-<div align="center">
-
 ## Vivek Lanke
-
-🚀 Full Stack Developer
 
 GitHub:  
 https://github.com/viveklanke007
-
-</div>
 
 ---
 
@@ -325,6 +286,6 @@ https://github.com/viveklanke007
 
 ## ⭐ Star this repository if you found it useful
 
-### Made with ❤️ using React + Tailwind CSS
+Built with ❤️ using React + Tailwind CSS
 
 </div>
